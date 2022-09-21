@@ -30,5 +30,7 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore --configuration ${{env.configuration}}
-    - name: Test
-      run: dotnet test --no-build --verbosity normal --configuration ${{env.configuration} --output ${{runner.temp}}/publish}
+    - name: TEST
+      run: dotnet test --no-build --verbosity normal --configuration ${{env.configuration}}
+    - name: Publish
+      run: dotnet test --no-build --verbosity normal --configuration ${{env.configuration}} --output ${{runner.temp}}/publish
